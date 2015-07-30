@@ -11,6 +11,21 @@ Ext.define('FridaSettings.view.settings.Controller', {
         }
     },
 
+    persistPersonnel: function() {
+        var personnel = Ext.getStore('personnel');
+
+        personnel.sync({
+            callback: function(batch, options) {
+                var operations = batch.getOperations();
+                Ext.each(operations, function(op) {
+                    var records = op.getRecords();
+                    Ext.each(records, function(record) {
+                        record.commit();
+                    })
+                })
+            }
+        })
+    },
 
     onPersonnelLoad: function(store, records) {
         var settings = Ext.ComponentQuery.query('settingswindow')[0],
@@ -23,7 +38,8 @@ Ext.define('FridaSettings.view.settings.Controller', {
     },
 
     onSaveClick: function(bt) {
-        var form = bt.up('window'),
+        var me = this,
+            form = bt.up('window'),
             tabs = form.down('tabpanel'),
             current = tabs.getActiveTab(),
             subComponents = current.query('*');
@@ -34,7 +50,7 @@ Ext.define('FridaSettings.view.settings.Controller', {
             var persistMethod = cmp && cmp.persist;
 
             if (persistMethod) {
-                persistMethod.call(cmp);
+                persistMethod.call(cmp, me);
                 return false;
             }
         })
@@ -45,9 +61,5 @@ Ext.define('FridaSettings.view.settings.Controller', {
         var form = bt.up('window');
 
         form.close();
-    },
-
-    onItemSelected: function (sender, record) {
-//        Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
     }
 });

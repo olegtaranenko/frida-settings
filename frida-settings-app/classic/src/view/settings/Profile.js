@@ -19,17 +19,17 @@ Ext.define('FridaSettings.view.settings.Profile', {
         standardSubmit: false
     },
 
-    persist: function() {
+    persist: function(controller) {
         var me = this,
             form = me.getForm();
 
         form.checkDirty();
         form.checkValidity();
 
-        var validated = form.isValid(),
+        var valid = form.isValid(),
             dirty = form.isDirty();
 
-        if (dirty && validated) {
+        if (dirty && valid) {
             var value = form.getValues(),
                 record = me.getRecord(),
                 stores = record.joined;
@@ -37,11 +37,11 @@ Ext.define('FridaSettings.view.settings.Profile', {
             record.set(value);
 
             if (record.dirty) {
-                Ext.each(stores, function(store) {
-                    store.sync();
-                    return false;
-                })
+                controller.persistPersonnel();
             }
+        }
+        if (!valid) {
+            Ext.Msg.alert('Warning', 'Input is wrong');
         }
     },
 

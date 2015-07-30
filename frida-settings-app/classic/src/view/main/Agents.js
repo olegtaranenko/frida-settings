@@ -21,9 +21,5 @@ Ext.define('FridaSettings.view.main.Agents', {
         { text: 'Top Item With Price', dataIndex: 'topItem', flex: 3 },
         { text: 'First Name',  dataIndex: 'first', flex: 1},
         { text: 'Last Name',  dataIndex: 'last', flex: 1 }
-    ],
-
-    listeners: {
-        select: 'onItemSelected'
-    }
+    ]
 });
