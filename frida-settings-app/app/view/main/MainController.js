@@ -9,13 +9,19 @@ Ext.define('FridaSettings.view.main.MainController', {
 
     alias: 'controller.main',
 
-    onItemSelected: function (sender, record) {
-//        Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
-    },
+    onSettingsClick: function(bt) {
+        var me = this,
+            settingsWindow = Ext.ComponentQuery.query('settingswindow'),
+            personnelStore = Ext.getStore('personnel');
 
-    onConfirm: function (choice) {
-        if (choice === 'yes') {
-            //
+        if (settingsWindow.length) {
+            settingsWindow = settingsWindow[0];
+        } else {
+            settingsWindow = Ext.widget('settingswindow');
         }
+
+        settingsWindow.show(null, function() {
+//            personnelStore.load();
+        });
     }
 });

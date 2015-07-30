@@ -12,7 +12,12 @@ Ext.define('FridaSettings.view.settings.Personnel', {
 
     ],
 
-//    title: 'Personnel',
+    persist: function() {
+        var store = this.getStore();
+
+        store.sync();
+    },
+
 
     store: {
         type: 'personnel'

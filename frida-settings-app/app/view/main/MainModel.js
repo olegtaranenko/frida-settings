@@ -7,8 +7,6 @@ Ext.define('FridaSettings.view.main.MainModel', {
     alias: 'viewmodel.main',
 
     data: {
-        name: 'Frida Settings'
+        name: 'Frida App'
     }
-
-    //TODO - add data, formulas and/or methods to support your view
 });

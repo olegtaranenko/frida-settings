@@ -9,21 +9,21 @@ Ext.define('FridaSettings.view.main.Home', {
     alias: 'widget.homepanel',
     requires: [
         'Ext.toolbar.Toolbar',
-        'FridaSettings.view.main.Agents',
-//        'FridaSettings.controller.HomeController'
+        'FridaSettings.view.main.Agents'
     ],
-
-//    controller: 'home',
-//    viewModel: 'home',
 
     dockedItems: [{
         xtype: 'toolbar',
+        dock: 'top',
         items: ['->', {
             text: 'Open',
             action: 'open'
         }, {
             text: 'Settings',
-            action: 'settings'
+            action: 'settings',
+            listeners: {
+                click: 'onSettingsClick'
+            }
         }]
     }],
 

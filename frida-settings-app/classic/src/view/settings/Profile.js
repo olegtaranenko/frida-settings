@@ -7,14 +7,46 @@
 Ext.define('FridaSettings.view.settings.Profile', {
     extend: 'Ext.form.Panel',
     requires: [
-        'Ext.layout.FormLayout'
+        'Ext.ux.colorpick.Field'
     ],
 
     alias: 'widget.profile',
     bodyPadding: 5,
     defaultType: 'textfield',
-//    layout: 'form',
+
+    config: {
+        trackResetOnLoad: true,
+        standardSubmit: false
+    },
+
+    persist: function() {
+        var me = this,
+            form = me.getForm();
+
+        form.checkDirty();
+        form.checkValidity();
+
+        var validated = form.isValid(),
+            dirty = form.isDirty();
+
+        if (dirty && validated) {
+            var value = form.getValues(),
+                record = me.getRecord(),
+                stores = record.joined;
+
+            record.set(value);
+
+            if (record.dirty) {
+                Ext.each(stores, function(store) {
+                    store.sync();
+                    return false;
+                })
+            }
+        }
+    },
+
     defaults: {
+        preventMark: false,
         labelWidth: '50%',
         labelAlign: 'right',
         anchor: '100%'
@@ -25,15 +57,20 @@ Ext.define('FridaSettings.view.settings.Profile', {
         name: 'id'
     }, {
         fieldLabel: 'First Name',
-        name: 'first',
+        name: 'firstname',
         allowBlank: true
     }, {
         fieldLabel: 'Last Name',
-        name: 'last',
+        name: 'lastname',
         allowBlank: false
     }, {
+//        xtype: 'email',
         fieldLabel: 'email',
-        name: 'last',
+        name: 'email',
         allowBlank: false
+    }, {
+        fieldLabel: 'Icon Color',
+        xtype: 'colorfield',
+        name: 'color'
     }]
 });

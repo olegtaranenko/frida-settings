@@ -9,12 +9,14 @@ Ext.define('FridaSettings.view.settings.SettingsWindow', {
     requires: [
         'Ext.tab.Panel',
         'Ext.toolbar.Toolbar',
+        'FridaSettings.view.settings.Controller',
         'FridaSettings.view.settings.Personnel',
         'FridaSettings.view.settings.Profile'
     ],
 
     alias: 'widget.settingswindow',
 
+    controller: 'settings',
 
     config: {
         title: 'Frida Settings',
@@ -24,9 +26,15 @@ Ext.define('FridaSettings.view.settings.SettingsWindow', {
         width: '90%'
     },
     buttons: [{
-        text: 'Save'
+        text: 'Save',
+        listeners: {
+            click: 'onSaveClick'
+        }
     }, {
-        text: 'Cancel'
+        text: 'Cancel',
+        listeners: {
+            click: 'onCancelClick'
+        }
     }],
 
     items: [{

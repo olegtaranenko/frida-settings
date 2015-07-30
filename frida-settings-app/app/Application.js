@@ -13,7 +13,7 @@ Ext.define('FridaSettings.Application', {
     ],
 
     controllers: [
-        'HomeController'
+//        'HomeController'
     ],
     
     launch: function () {

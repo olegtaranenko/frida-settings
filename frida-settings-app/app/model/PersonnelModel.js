@@ -6,6 +6,13 @@
  */
 Ext.define('FridaSettings.model.PersonnelModel', {
     extend: 'Ext.data.Model',
+
+    alias: 'model.personnel',
+
+    requires: [
+        'FridaSettings.proxy.PersonnelProxy'
+    ],
+
     config: {
         fields: [
             {name: 'color', type: 'string'},
@@ -15,5 +22,7 @@ Ext.define('FridaSettings.model.PersonnelModel', {
             {name: 'id', type: 'int'},
             {name: 'lastname', type: 'string'}
         ]
+
+//        proxy: 'personnel'
     }
 });
