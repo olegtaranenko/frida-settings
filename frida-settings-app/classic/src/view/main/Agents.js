@@ -16,9 +16,11 @@ Ext.define('FridaSettings.view.main.Agents', {
     },
 
     columns: [
-        { text: 'Name',  dataIndex: 'name' },
-        { text: 'Email', dataIndex: 'email', flex: 1 },
-        { text: 'Phone', dataIndex: 'phone', flex: 1 }
+        { text: 'Risk',  dataIndex: 'risk', width: 50 },
+        { text: 'Transaction Date',  dataIndex: 'transactionDate', width: 150, column: 'Ext.grid.column.Date' },
+        { text: 'Top Item With Price', dataIndex: 'topItem', flex: 3 },
+        { text: 'First Name',  dataIndex: 'first', flex: 1},
+        { text: 'Last Name',  dataIndex: 'last', flex: 1 }
     ],
 
     listeners: {

@@ -6,7 +6,7 @@ Ext.define('FridaSettings.view.main.Personnel', {
     xtype: 'mainlist',
 
     requires: [
-        'FridaSettings.store.Personnel'
+        'FridaSettings.store.PersonnelStore'
     ],
 
     title: 'Personnel',

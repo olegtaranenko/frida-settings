@@ -6,7 +6,10 @@ Ext.define('FridaSettings.view.main.Personnel', {
     xtype: 'mainlist',
 
     requires: [
-        'FridaSettings.store.Personnel'
+        'Ext.grid.column.Check',
+        'Ext.grid.plugin.CellEditing',
+        'FridaSettings.store.PersonnelStore'
+
     ],
 
     title: 'Personnel',
@@ -16,10 +19,24 @@ Ext.define('FridaSettings.view.main.Personnel', {
     },
 
     columns: [
-        { text: 'Name',  dataIndex: 'name' },
-        { text: 'Email', dataIndex: 'email', flex: 1 },
-        { text: 'Phone', dataIndex: 'phone', flex: 1 }
+        { text: 'ID',  dataIndex: 'id', width: 40 },
+        { text: 'First',  dataIndex: 'firstname', flex: 1,
+            editor: {
+                xtype: 'textfield',
+                allowBlank: false
+            }
+        },
+        { text: 'Last',  dataIndex: 'lastname', flex: 1 },
+        { text: 'Email', dataIndex: 'email', flex: 2 },
+        { text: 'Color', dataIndex: 'color', width: 100},
+        { text: 'Active', dataIndex: 'disabled', column: 'checkcolumn'}
     ],
+
+    plugins: {
+        ptype: 'cellediting',
+        clicksToEdit: 1
+    },
+
 
     listeners: {
         select: 'onItemSelected'

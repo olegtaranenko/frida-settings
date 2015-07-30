@@ -1,25 +1,20 @@
 Ext.define('FridaSettings.store.AgentsStore', {
     extend: 'Ext.data.Store',
     requires: [
-        'Ext.data.proxy.Memory'
+        'Ext.data.proxy.Memory',
+        'FridaSettings.model.AgentModel'
     ],
 
     alias: 'store.agents',
 
-    fields: [
-        'name', 'email', 'phone'
-    ],
-
     config: {
-        autoLoad: true
+        autoLoad: true,
+        model: 'FridaSettings.model.AgentModel'
     },
 
 
     data: { items: [
-        { name: 'Jean Luc', email: "jeanluc.picard@enterprise.com", phone: "555-111-1111" },
-        { name: 'Worf',     email: "worf.moghsson@enterprise.com",  phone: "555-222-2222" },
-        { name: 'Deanna',   email: "deanna.troi@enterprise.com",    phone: "555-333-3333" },
-        { name: 'Data',     email: "mr.data@enterprise.com",        phone: "555-444-4444" }
+        { id: 35213, first: 'Jason', last: 'Steward', risk: '23', transactionDate: '20141102 09:12:00', topItem: 'SA Galaxy S IV (white), $649.99'}
     ]},
     proxy: {
         type: 'memory',
