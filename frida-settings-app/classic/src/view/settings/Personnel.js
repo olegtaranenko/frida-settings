@@ -1,7 +1,7 @@
 /**
  * This view is an example list of people.
  */
-Ext.define('FridaSettings.view.main.Personnel', {
+Ext.define('FridaSettings.view.settings.Personnel', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.personnel',
 
@@ -12,7 +12,7 @@ Ext.define('FridaSettings.view.main.Personnel', {
 
     ],
 
-    title: 'Personnel',
+//    title: 'Personnel',
 
     store: {
         type: 'personnel'

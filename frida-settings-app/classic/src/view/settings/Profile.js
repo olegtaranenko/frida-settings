@@ -4,7 +4,7 @@
  * Date: 30.07.15
  * Time: 07:18
  */
-Ext.define('FridaSettings.view.main.Profile', {
+Ext.define('FridaSettings.view.settings.Profile', {
     extend: 'Ext.form.Panel',
     requires: [
         'Ext.layout.FormLayout'
@@ -20,6 +20,10 @@ Ext.define('FridaSettings.view.main.Profile', {
         anchor: '100%'
     },
     items: [{
+        disabled: true,
+        fieldLabel: 'ID',
+        name: 'id'
+    }, {
         fieldLabel: 'First Name',
         name: 'first',
         allowBlank: true

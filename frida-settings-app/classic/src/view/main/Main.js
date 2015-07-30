@@ -14,7 +14,8 @@ Ext.define('FridaSettings.view.main.Main', {
         'Ext.window.MessageBox',
         'FridaSettings.view.main.Home',
         'FridaSettings.view.main.MainController',
-        'FridaSettings.view.main.MainModel'
+        'FridaSettings.view.main.MainModel',
+        'FridaSettings.view.settings.SettingsWindow'
     ],
 
     controller: 'main',

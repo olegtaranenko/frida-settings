@@ -1,10 +1,6 @@
 Ext.define('FridaSettings.controller.HomeController', {
     extend: 'Ext.app.Controller',
 
-    requires: [
-        'FridaSettings.view.Settings'
-    ],
-
     alias: 'controller.home',
 
     control: {

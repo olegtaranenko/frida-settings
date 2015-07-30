@@ -10,9 +10,7 @@ Ext.define('FridaSettings.view.main.Home', {
     requires: [
         'Ext.toolbar.Toolbar',
         'FridaSettings.view.main.Agents',
-//        'FridaSettings.controller.HomeController',
-        'FridaSettings.view.main.Personnel',
-        'FridaSettings.view.main.Profile'
+//        'FridaSettings.controller.HomeController'
     ],
 
 //    controller: 'home',

@@ -14,7 +14,7 @@ Ext.define('FridaSettings.view.main.Main', {
 
         'FridaSettings.view.main.MainController',
         'FridaSettings.view.main.MainModel',
-        'FridaSettings.view.main.Personnel'
+        'FridaSettings.view.settings.Personnel'
     ],
 
     controller: 'main',
