@@ -3,7 +3,7 @@
  */
 Ext.define('FridaSettings.view.main.Personnel', {
     extend: 'Ext.grid.Grid',
-    xtype: 'mainlist',
+    xtype: 'personnel',
 
     requires: [
         'FridaSettings.store.PersonnelStore'

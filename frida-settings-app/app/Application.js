@@ -11,6 +11,10 @@ Ext.define('FridaSettings.Application', {
     stores: [
         // TODO: add global / shared stores here
     ],
+
+    controllers: [
+        'HomeController'
+    ],
     
     launch: function () {
         // TODO - Launch the application

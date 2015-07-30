@@ -12,11 +12,9 @@ Ext.define('FridaSettings.view.main.Main', {
     requires: [
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
-        'FridaSettings.view.main.Agents',
+        'FridaSettings.view.main.Home',
         'FridaSettings.view.main.MainController',
-        'FridaSettings.view.main.MainModel',
-        'FridaSettings.view.main.Personnel',
-        'FridaSettings.view.main.Profile'
+        'FridaSettings.view.main.MainModel'
     ],
 
     controller: 'main',
@@ -80,27 +78,27 @@ Ext.define('FridaSettings.view.main.Main', {
         title: 'Home',
         iconCls: 'fa-home',
         items: [{
-            xtype: 'agentslist'
+            xtype: 'homepanel'
         }]
+/*
     }, {
         title: 'Manage Users',
         iconCls: 'fa-users',
         items: [{
-            xtype: 'mainlist'
+            xtype: 'personnel'
         }]
-/*
     }, {
         title: 'Groups',
         iconCls: 'fa-users',
         bind: {
             html: '{loremIpsum}'
         }
-*/
     }, {
         title: 'Profile',
         iconCls: 'fa-user',
         items: [{
             xtype: 'profile'
         }]
+*/
     }]
 });

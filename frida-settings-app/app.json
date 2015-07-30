@@ -221,6 +221,7 @@
     /**
      * Settings specific to modern toolkit builds.
      */
+/*
     "modern": {
         "js": [
             {
@@ -229,6 +230,7 @@
             }
         ]
     },
+*/
 
     /**
      * List of all CSS assets in the right inclusion order.
@@ -532,8 +534,9 @@
             "sass": {
                 // "save": "classic/sass/save.json"
             }
-        },
+        }
 
+/*
         "modern": {
             "toolkit": "modern",
             "theme": "theme-neptune",
@@ -541,6 +544,7 @@
                 // "save": "modern/sass/save.json"
             }
         }
+*/
     },
     
 

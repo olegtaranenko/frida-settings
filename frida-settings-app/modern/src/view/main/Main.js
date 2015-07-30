@@ -36,7 +36,7 @@ Ext.define('FridaSettings.view.main.Main', {
             layout: 'fit',
             // The following grid shares a store with the classic version's grid as well!
             items: [{
-                xtype: 'mainlist'
+                xtype: 'personnel'
             }]
         },{
             title: 'Users',

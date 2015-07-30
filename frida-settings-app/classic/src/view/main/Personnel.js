@@ -3,7 +3,7 @@
  */
 Ext.define('FridaSettings.view.main.Personnel', {
     extend: 'Ext.grid.Panel',
-    xtype: 'mainlist',
+    alias: 'widget.personnel',
 
     requires: [
         'Ext.grid.column.Check',
