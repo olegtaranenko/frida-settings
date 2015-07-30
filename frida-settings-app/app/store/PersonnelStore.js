@@ -8,7 +8,12 @@ Ext.define('FridaSettings.store.PersonnelStore', {
 
     config: {
         autoLoad: true,
-        autoSync: true
+        autoSync: true,
+        filters: [{
+            filterFn: function(item) {
+                return item.getId() != 5;
+            }
+        }]
     },
 
     proxy: {

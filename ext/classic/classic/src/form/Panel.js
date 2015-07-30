@@ -338,7 +338,7 @@ Ext.define('Ext.form.Panel', {
     getValues: function(asString, dirtyOnly, includeEmptyText, useDataValues) {
         return this.getForm().getValues(asString, dirtyOnly, includeEmptyText, useDataValues);
     },
-    
+
     /**
      * Convenience function to check if the form has any dirty fields. This is the same as calling
      * {@link Ext.form.Basic#isDirty this.getForm().isDirty()}.
