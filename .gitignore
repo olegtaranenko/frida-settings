@@ -1,0 +1,7 @@
+build
+workspace.xml
+classic.json
+modern.json
+bootstrap.*
+frida-settings-app/sass
+*.log
