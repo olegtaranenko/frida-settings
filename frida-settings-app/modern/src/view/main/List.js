@@ -1,7 +1,7 @@
 /**
  * This view is an example list of people.
  */
-Ext.define('FridaSettings.view.main.List', {
+Ext.define('FridaSettings.view.main.Personnel', {
     extend: 'Ext.grid.Grid',
     xtype: 'mainlist',
 

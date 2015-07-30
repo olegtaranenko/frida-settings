@@ -12,10 +12,10 @@ Ext.define('FridaSettings.view.main.Main', {
     requires: [
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
-
+        'FridaSettings.view.main.Agents',
+        'FridaSettings.view.main.Personnel',
         'FridaSettings.view.main.MainController',
-        'FridaSettings.view.main.MainModel',
-        'FridaSettings.view.main.List'
+        'FridaSettings.view.main.MainModel'
     ],
 
     controller: 'main',
@@ -80,14 +80,15 @@ Ext.define('FridaSettings.view.main.Main', {
         iconCls: 'fa-home',
         // The following grid shares a store with the classic version's grid as well!
         items: [{
-            xtype: 'mainlist'
+            xtype: 'agentslist'
         }]
     }, {
-        title: 'Users',
+        title: 'Manage Users',
         iconCls: 'fa-user',
-        bind: {
-            html: '{loremIpsum}'
-        }
+        items: [{
+            xtype: 'mainlist'
+        }]
+/*
     }, {
         title: 'Groups',
         iconCls: 'fa-users',
@@ -95,10 +96,11 @@ Ext.define('FridaSettings.view.main.Main', {
             html: '{loremIpsum}'
         }
     }, {
-        title: 'Settings',
+        title: 'Profile',
         iconCls: 'fa-cog',
-        bind: {
-            html: '{loremIpsum}'
-        }
+        items: [{
+            xtype: 'profile'
+        }]
+*/
     }]
 });
